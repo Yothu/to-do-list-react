@@ -20,7 +20,6 @@ function TasksContainer(props) {
 
 TasksContainer.propTypes = {
   tasks: PropTypes.instanceOf(Array).isRequired,
-  // tasks.map: PropTypes.instanceOf(Function).isRequired,
 };
 
 export default TasksContainer;

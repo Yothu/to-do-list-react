@@ -1,9 +1,8 @@
 import React from 'react';
-import './App.css';
 import TasksContainer from './components/TasksContainer';
 import './components/Style.css';
 
-const asd = [];
+const tasks = [];
 
 function App() {
   const [newDescription, setDescription] = React.useState('');
@@ -11,10 +10,11 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    asd.push({
+    tasks.push({
       description: newDescription,
       id: newId,
     });
+    setDescription('');
     setId(newId + 1);
   };
 
@@ -26,10 +26,10 @@ function App() {
             <h1 className="tasks-container-title">To Do List</h1>
           </div>
           <form onSubmit={handleSubmit} className="form-container">
-            <input onChange={(e) => setDescription(e.target.value)} value={newDescription} type="text" name="taskForm" id="taskForm" className="task-form" placeholder="Add to your list..." />
-            <input type="submit" />
+            <input onChange={({ target }) => setDescription(target.value)} value={newDescription} type="text" name="taskForm" id="taskForm" className="task-form" placeholder="Add to your list..." />
+            <input type="submit" value="Submit" />
           </form>
-          <TasksContainer tasks={asd} />
+          <TasksContainer tasks={tasks} />
         </div>
       </div>
     </>
