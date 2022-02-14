@@ -1,0 +1,125 @@
+.todo-list {
+  display: flex;
+  justify-content: center;
+}
+
+.task-outer-container {
+  border: 3px solid #ecebea;
+  flex-basis: 70vw;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ecebea;
+}
+
+.tasks-container-title {
+  font-size: 18px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  margin: 0;
+  padding: 20px;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.form-container {
+  display: flex;
+  align-items: center;
+}
+
+.reload-icon {
+  padding: 20px;
+  margin: 0 !important;
+}
+
+.task-form {
+  border: none;
+  font-size: 18px;
+  color: #b0afaf;
+  height: 100%;
+  width: 100%;
+  font-style: italic;
+  padding: 15px 0 15px 20px;
+}
+
+.hide {
+  display: none !important;
+}
+
+.task-inner-container {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ecebea;
+  border-bottom: 1px solid #ecebea;
+}
+
+.focus-task {
+  background-color: #fffec3;
+}
+
+.check-box {
+  width: 20px;
+  height: 20px;
+  margin: auto 20px;
+  cursor: pointer;
+}
+
+.description {
+  margin: 0;
+  padding: 1rem;
+  flex-grow: 1;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 18px;
+  border: none;
+  background-color: transparent;
+}
+
+.complete-task-description {
+  text-decoration: line-through;
+  color: #a9a9a9;
+}
+
+.complete {
+  color: #a9a9a9;
+  text-decoration: line-through;
+}
+
+.more-icon {
+  transform: rotate(90deg);
+  width: 20px;
+  height: 20px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.clear-container {
+  display: flex;
+  padding: 15px 20px;
+  background-color: #f6f6f6;
+  justify-content: center;
+}
+
+.clear-text {
+  margin: 0;
+  color: black;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 18px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="text"] {
+  outline: none;
+}
