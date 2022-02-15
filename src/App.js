@@ -1,34 +1,33 @@
 import React from 'react';
+import Header from './components/Header';
+import Input from './components/Input';
 import TasksContainer from './components/TasksContainer';
 import './components/Style.css';
 
-const tasks = [];
-
 function App() {
-  const [newDescription, setDescription] = React.useState('');
-  const [newId, setId] = React.useState(1);
+  const [tasks, setTasks] = React.useState([]);
+  const [id, setId] = React.useState(1);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const addTask = (newDescription, newId) => {
     tasks.push({
       description: newDescription,
       id: newId,
     });
-    setDescription('');
-    setId(newId + 1);
+    setTasks(tasks);
+  };
+
+  const handleSubmit = (event, description) => {
+    event.preventDefault();
+    addTask(description, id);
+    setId(id + 1);
   };
 
   return (
     <>
       <div className="todo-list whole-page">
         <div className="task-outer-container">
-          <div className="title-container">
-            <h1 className="tasks-container-title">To Do List</h1>
-          </div>
-          <form onSubmit={handleSubmit} className="form-container">
-            <input onChange={({ target }) => setDescription(target.value)} value={newDescription} type="text" name="taskForm" id="taskForm" className="task-form" placeholder="Add to your list..." />
-            <input type="submit" value="Submit" />
-          </form>
+          <Header />
+          <Input handleSubmit={handleSubmit} />
           <TasksContainer tasks={tasks} />
         </div>
       </div>

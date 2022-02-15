@@ -2,9 +2,7 @@ import PropTypes from 'prop-types';
 import Task from './Task';
 import './Style.css';
 
-function TasksContainer(props) {
-  const { tasks } = props;
-
+function TasksContainer({ tasks }) {
   return (
     <ul className="task-inner-container">
       {
